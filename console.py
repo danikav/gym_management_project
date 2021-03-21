@@ -3,6 +3,7 @@ from models.member import Member
 
 import repositories.member_repository as member_repository
 
+member_repository.delete_all()
 
 member1 = Member('Othniel Adalwolf')
 member_repository.save(member1)
