@@ -8,7 +8,10 @@
 
 <ul>
   {% for member in members %}
-    <li><a href="/members/{{ member.id }}"> {{member.name}} </a></li>
+    <li>
+      <a href="/members/{{ member.id }}"> {{member.name}} </a>
+      <a href="/members/{{member.id}}/edit"> <button id=edit >edit</button></a>
+  </li>
   {% endfor %}
     </ul>
 {% endblock %}
