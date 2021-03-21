@@ -24,5 +24,6 @@ member5 = Member('Evpraksiya Jani')
 member_repository.save(member5)
 
 gymclass1 = Gymclass('Zumba', '12/03/21', '19:00', 'Exercise and dance and have fun!')
+gymclass_repository.save(gymclass1)
 
 pdb.set_trace()

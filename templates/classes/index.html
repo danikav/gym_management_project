@@ -1,7 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>
-TEST
-</p>
+<h1>Classes</h1>
+
+<table>
+  <tr>
+    <th>Class name</th>
+
+  </tr>
+  {% for class in gymclasses %}
+  <tr>
+    <td><a href="/classes/{{ class.id }}"> {{class.name}} </a></td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <th>Class date</th>
+    
+  </tr>
+  {% for class in gymclasses %}
+  <tr>
+    <td> {{class.date}}</td>
+  </tr>
+
+  {% endfor %}
+
+  <tr>
+    <th>Class time</th>
+    
+  </tr>
+  {% for class in gymclasses %}
+  <tr>
+    <td>{{class.time}}</td>
+  </tr>
+  {% endfor %}
+
+  <tr>
+    <th>Class details</th>
+    
+  </tr>
+  {% for class in gymclasses %}
+  <tr>
+    <td> {{class.details}} </td>
+  </tr>
+  {% endfor %}
+</table>
+
 {% endblock %}
