@@ -6,44 +6,18 @@
 <table>
   <tr>
     <th>Class name</th>
-
-  </tr>
-  {% for class in gymclasses %}
-  <tr>
-    <td><a href="/classes/{{ class.id }}"> {{class.name}} </a></td>
- 
-  </tr>
-  {% endfor %}
-  <tr>
     <th>Class date</th>
-    
-  </tr>
-  {% for class in gymclasses %}
-  <tr>
-    <td> {{class.date}}</td>
-  </tr>
-
-  {% endfor %}
-
-  <tr>
     <th>Class time</th>
-    
-  </tr>
-  {% for class in gymclasses %}
-  <tr>
-    <td>{{class.time}}</td>
-  </tr>
-  {% endfor %}
-
-  <tr>
     <th>Class details</th>
-    
   </tr>
+
   {% for class in gymclasses %}
   <tr>
-    <td> {{class.details}} </td>
+    <td><a href="/classes/{{ class.id }}"> {{class.name}} </a> </td>
+    <td>{{class.date}}</td>
+    <td>{{class.time}}</td>
+    <td>{{class.details}}</td>
+    {% endfor %}
   </tr>
-  {% endfor %}
-</table>
 
 {% endblock %}
