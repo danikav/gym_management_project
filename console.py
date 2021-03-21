@@ -23,7 +23,13 @@ member_repository.save(member4)
 member5 = Member('Evpraksiya Jani')
 member_repository.save(member5)
 
-gymclass1 = Gymclass('Zumba', '12/03/21', '19:00', 'Exercise and dance and have fun!')
+gymclass1 = Gymclass('Zumba', '02/04/21', '19:00', 'Exercise and dance and have fun!')
 gymclass_repository.save(gymclass1)
+
+gymclass2 = Gymclass('Kickboxing', '04/04/21', '21:00', 'Get fit and seek vengeance on your enemies')
+gymclass_repository.save(gymclass2)
+
+gymclass3 = Gymclass('Aikido', '06/04/21', '17:00', 'Learn about the magical powers of stillness and spoons')
+gymclass_repository.save(gymclass3)
 
 pdb.set_trace()
