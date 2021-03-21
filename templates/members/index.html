@@ -3,6 +3,9 @@
 {% block content %}
 <h1>Members</h1>
 
+<a href="/members/new"><button>Add new member</button></a>
+
+
 <ul>
   {% for member in members %}
     <li><a href="/members/{{ member.id }}"> {{member.name}} </a></li>

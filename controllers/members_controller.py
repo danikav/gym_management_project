@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.member import Member
 import repositories.member_repository as member_repository
@@ -17,6 +17,6 @@ def new_member():
 @members_blueprint.route("/members", methods=["POST"])
 def create_member():
     name = request.form["name"]
-    new_meber = Member(name)
+    new_member = Member(name)
     member_repository.save(new_member)
     return redirect("/members")
