@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.gymclass import Gymclass
 
 def save(gymclass):
-    sql = "INSERT INTO classes( name ) VALUES ( %s ) RETURNING id"
-    values = [gymclass.name]
+    sql = "INSERT INTO classes( name, date, time, details ) VALUES ( %s, %s, %s, %s ) RETURNING id"
+    values = [gymclass.name, gymclass.date, gymclass.time, gymclass.details]
     results = run_sql( sql, values )
     gymclass.id = results[0]['id']
     return gymclass
@@ -18,6 +18,6 @@ def select_all():
     sql = "SELECT * FROM classes"
     results = run_sql(sql)
     for row in results:
-        gymclass = Gymclass(row['name'], row['id'], row['date'], row['time'], row['details'] )
+        gymclass = Gymclass(row['name'], row['date'], row['time'], row['details'] )
         gymclasses.append(gymclass)
     return gymclasses
