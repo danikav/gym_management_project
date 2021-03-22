@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-TEST
+<h2>Book member into {{gymclass.name}}</h2>
+
+<form action="/classes/<id>" method="POST">
+    <label for="membername">Member name:</label>
+        <input type="text" id="membername" name="membername">
+    
+    <div>
+        <input type="submit">
+    </div>
+</form>
 {% endblock %}

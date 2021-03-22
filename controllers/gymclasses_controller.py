@@ -55,7 +55,7 @@ def book_member(id):
 
 @gymclasses_blueprint.route("/classes/<id>", methods=["POST"])
 def update_bookings(id):
-    name = request.form["name"]
-    booking = Booking(name, gymclass.id, id)
+    member_name = request.form["membername"]
+    booking = Booking(member_name, gymclass.id, id)
     booking_repository.save(booking)
     return redirect("/classes")
