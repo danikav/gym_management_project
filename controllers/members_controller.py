@@ -30,3 +30,10 @@ def show(id):
 def edit_member(id):
     member = member_repository.select_member(id)
     return render_template('members/edit.html', member=member)
+
+@members_blueprint.route("/members/<id>", methods=["POST"])
+def update_member(id):
+    name = request.form["name"]
+    member = Member(name, id)
+    member_repository.update(member)
+    return redirect("/members")
