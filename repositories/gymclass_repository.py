@@ -29,5 +29,5 @@ def select_class(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        gymclass = Gymclass(result ['id'], result['name'], result['date'], result['time'], result['details'] )
+        gymclass = Gymclass(result['name'], result['date'], result['time'], result['details'], result['id'] )
     return gymclass
