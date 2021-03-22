@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.gymclass import Gymclass
+from models.booking import Booking
 import repositories.gymclass_repository as gymclass_repository
+import repositories.booking_repository as booking_repository
 
 gymclasses_blueprint = Blueprint("classes", __name__)
 
@@ -44,4 +46,16 @@ def update_class(id):
     details = request.form["details"]
     gymclass = Gymclass(name, date, time, details, id)
     gymclass_repository.update(gymclass)
+    return redirect("/classes")
+
+@gymclasses_blueprint.route("/classes/<id>/book")
+def book_member(id):
+    gymclass = gymclass_repository.select_class(id)
+    return render_template('classes/book.html', gymclass=gymclass)
+
+@gymclasses_blueprint.route("/classes/<id>", methods=["POST"])
+def update_bookings(id):
+    name = request.form["name"]
+    booking = Booking(name, gymclass.id, id)
+    booking_repository.save(booking)
     return redirect("/classes")
