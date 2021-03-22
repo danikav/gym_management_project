@@ -18,7 +18,7 @@ def select_all():
     sql = "SELECT * FROM classes"
     results = run_sql(sql)
     for row in results:
-        gymclass = Gymclass(row['name'], row['date'], row['time'], row['details'] )
+        gymclass = Gymclass(row['name'], row['date'], row['time'], row['details'], row['id'] )
         gymclasses.append(gymclass)
     return gymclasses
 
@@ -29,5 +29,5 @@ def select_class(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        gymclass = Gymclass(result['name'], result['date'], result['time'], result['details'] )
+        gymclass = Gymclass(result ['id'], result['name'], result['date'], result['time'], result['details'] )
     return gymclass

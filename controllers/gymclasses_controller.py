@@ -23,3 +23,13 @@ def create_class():
     new_class = Gymclass(name, date, time, details)
     gymclass_repository.save(new_class)
     return redirect("/classes")
+
+@gymclasses_blueprint.route("/classes/<id>")
+def show(id):
+    gymclass = gymclass_repository.select_class(id)
+    return render_template("classes/show.html", gymclass=gymclass)
+
+@gymclasses_blueprint.route("/classes/<id>/edit")
+def edit_class(id):
+    gymclass = gymclass_repository.select_class(id)
+    return render_template('classes/edit.html', gymclass=gymclass)
