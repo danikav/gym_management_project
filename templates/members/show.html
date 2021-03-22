@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-TEST
+<h1> {{member.name}} </h1>
+
+<h3>Classes:</h3>
+{% for class in gymclasses %}
+<li>{{class.name}} - {{class.date}} - {{ class.time }} - {{class.details }}</li>
+{% endfor %}
+
 {% endblock %}

@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-TEST
+<h1> {{gymclass.name}} </h1>
+
+<h3>Members:</h3>
+{% for member in members %}
+<li>{{member.name}}</li>
+{% endfor %}
 {% endblock %}

@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.gymclass import Gymclass
+from models.member import Member
 
 def save(gymclass):
     sql = "INSERT INTO classes( name, date, time, details ) VALUES ( %s, %s, %s, %s ) RETURNING id"
@@ -36,3 +37,21 @@ def update(gymclass):
     sql = "UPDATE classes SET (name, date, time, details) = (%s, %s, %s, %s) WHERE id = %s"
     values = [gymclass.name, gymclass.date, gymclass.time, gymclass.details, gymclass.id]
     run_sql(sql, values)
+    
+def members(gymclass):
+    values = [gymclass.id]
+    sql = """
+        SELECT members.* FROM members
+        INNER JOIN bookings
+        ON members.id = bookings.member_id
+        WHERE class_id = %s
+    """
+
+    results = run_sql(sql, values)
+    members = []
+
+    for row in results:
+        member = Member(row["name"], row["id"])
+        members.append(member)
+        
+    return members
