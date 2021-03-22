@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form>EDIT CLASS</form>
+<h2>Update a Class</h2>
+
+<form action="/classes/{{ gymclass.id }}" method="POST">
+    <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ gymclass.name }}">
+
+    <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value="{{ gymclass.date }}">
+
+    <label for="time">Time:</label>
+        <input type="text" id="time" name="time" value="{{ gymclass.time }}">
+
+    <label for="details">Details:</label>
+        <textarea id="details" name="details" rows="5" cols="15" value="{{ gymclass.details }}">
+        </textarea>
+    
+    <div>
+        <input type="submit">
+    </div>
+</form>
 {% endblock %}

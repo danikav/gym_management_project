@@ -17,11 +17,11 @@
     <td>{{class.date}}</td>
     <td>{{class.time}}</td>
     <td>{{class.details}}</td>
-    <td><a href="/classes/{{class.id}}/edit"> <button id=edit >edit</button></a></td>
+    <td><a href="/classes/{{ class.id }}/edit"> <button id=edit >edit</button></a></td>
     {% endfor %}
   </tr>
   </table>
 
-  <a href="/classes/new"><button>Add new class</button></a>
+  <a href="/classes/new"><button>Create class</button></a>
 
 {% endblock %}
