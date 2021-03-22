@@ -21,3 +21,13 @@ def select_all():
         gymclass = Gymclass(row['name'], row['date'], row['time'], row['details'] )
         gymclasses.append(gymclass)
     return gymclasses
+
+def select_class(id):
+    gymclass = None
+    sql = "SELECT * FROM classes WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        gymclass = Gymclass(result['name'], result['date'], result['time'], result['details'] )
+    return gymclass
