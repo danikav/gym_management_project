@@ -3,9 +3,9 @@
 {% block content %}
 <h1> {{member.name}} </h1>
 
-<h3>Classes:</h3>
+<h3 class="list">Classes:</h3>
 {% for class in gymclasses %}
-<li>{{class.name}} - {{class.date}} - {{ class.time }} - {{class.details }}</li>
+<li class="list">{{class.name}} - {{class.date}} - {{ class.time }} - {{class.details }}</li>
 {% endfor %}
 
 {% endblock %}
