@@ -3,9 +3,14 @@
 {% block content %}
 <h2>Book member into {{gymclass.name}}</h2>
 
-<form action="/classes/<id>" method="POST">
+<form action="/classes/{{gymclass.id}}/bookings" method="POST">
     <label for="membername">Member name:</label>
-        <input type="text" id="membername" name="membername">
+    <select id="membername" name="membername">
+            {% for member in members %}
+                 <option value={{member.id}}>{{member.name}}</option>
+            {% endfor %}
+    </select>
+      
     
     <div>
         <input type="submit">

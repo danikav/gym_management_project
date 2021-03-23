@@ -1,3 +1,8 @@
+body {
+background-image: url(/static/1087589.jpg);
+
+
+}
 header {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
@@ -25,15 +30,17 @@ nav > ul {
 }
 
 nav > ul > li {
-display: inline
+display: inline;
+list-style-type: none;
 }
 
 nav > ul > li > a:visited{
     color: white
 }
 
-ul {
+#members {
     list-style-type: none;
+    background-color: snow;
 }
 
 button {
@@ -45,6 +52,7 @@ button {
 table, th, td {
     border: 2px solid black;
     border-collapse: collapse;
+    background-color: snow;
   } 
 
 footer {

@@ -4,6 +4,7 @@ from models.gymclass import Gymclass
 from models.booking import Booking
 import repositories.gymclass_repository as gymclass_repository
 import repositories.booking_repository as booking_repository
+import repositories.member_repository as member_repository
 
 gymclasses_blueprint = Blueprint("classes", __name__)
 
@@ -51,12 +52,14 @@ def update_class(id):
 @gymclasses_blueprint.route("/classes/<id>/book")
 def book_member(id):
     gymclass = gymclass_repository.select_class(id)
-    return render_template('classes/book.html', gymclass=gymclass)
+    members = member_repository.select_all()
+    return render_template('classes/book.html', gymclass=gymclass, members=members)
 
 @gymclasses_blueprint.route("/classes/<id>/bookings", methods=["POST"])
 def update_bookings(id):
-    member_name = request.form["membername"]
+    member_id = request.form["membername"]
+    member = member_repository.select_member(member_id)
     gymclass = gymclass_repository.select_class(id)
-    booking = Booking(member_name, gymclass, id)
+    booking = Booking(member, gymclass, id)
     booking_repository.save(booking)
-    return redirect("/classes/<id>/bookings")
+    return redirect(f"/classes/{id}/bookings")

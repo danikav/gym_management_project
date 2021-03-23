@@ -6,7 +6,7 @@
 <a href="/members/new"><button>Add new member</button></a>
 
 
-<ul>
+<ul id="members">
   {% for member in members %}
     <li>
       <a href="/members/{{member.id}}/edit"> <button id=edit >edit</button></a>

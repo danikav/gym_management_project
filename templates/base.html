@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/gym_style.css">
+    <!-- <link rel="stylesheet" href="static/gym_style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='gym_style.css') }}">
     <title>GYM HOME</title>
 </head>
 <body>
@@ -25,20 +26,6 @@
           </ul>
         </nav>
     </header>
-    <nav>
-
-    <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/members">Members</a>
-        </li>
-        <li>
-          <a href="/classes">Classes</a>
-        </li>
-      </ul>
-    </nav>
     {% block content %}
 
     {% endblock %}
