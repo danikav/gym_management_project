@@ -22,8 +22,9 @@ def create_class():
     name = request.form["name"]
     date = request.form["date"]
     time = request.form["time"]
+    capacity = request.forn['capacity']
     details = request.form["details"]
-    new_class = Gymclass(name, date, time, details)
+    new_class = Gymclass(name, date, time, capacity, details)
     gymclass_repository.save(new_class)
     return redirect("/classes")
 
@@ -44,8 +45,9 @@ def update_class(id):
     name = request.form["name"]
     date = request.form["date"]
     time = request.form["time"]
+    capacity = request.form['capacity']
     details = request.form["details"]
-    gymclass = Gymclass(name, date, time, details, id)
+    gymclass = Gymclass(name, date, time, capacity, details, id)
     gymclass_repository.update(gymclass)
     return redirect("/classes")
 
