@@ -63,5 +63,10 @@ def update_bookings(id):
     member = member_repository.select_member(member_id)
     gymclass = gymclass_repository.select_class(id)
     booking = Booking(member, gymclass, id)
-    booking_repository.save(booking)
+
+    members = gymclass_repository.members(gymclass)
+    if len(members) < gymclass.capacity:
+        booking_repository.save(booking)
+    else:
+        return render_template('classes/full.html')
     return redirect(f"/classes/{id}/bookings")

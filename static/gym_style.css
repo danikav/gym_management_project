@@ -109,3 +109,12 @@ footer {
     height: 400px;
     width: 400px;
 }
+#full {
+    background:snow;
+    text-align: center;
+    padding: 70px;
+    font-size: 30px;
+}
+#angry {
+
+}
