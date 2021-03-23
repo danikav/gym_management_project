@@ -85,6 +85,13 @@ footer {
 
 }
 
+.addnewmember {
+    margin-top: 5px;
+    width: 25%;
+    height: 30px;
+    background-color: whitesmoke
+}
+
 .list {
         background: snow
     
