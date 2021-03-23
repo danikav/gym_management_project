@@ -1,0 +1,68 @@
+header {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: whitesmoke;
+    padding: 15px;
+    padding-bottom: none;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+header > h1 {
+    position: relative;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 0.15em #1da9cc;
+    filter: blur(0.010em);
+    
+}
+
+nav > ul {
+    margin-bottom: none;
+}
+
+nav > ul > li {
+display: inline
+}
+
+nav > ul > li > a:visited{
+    color: white
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    background-color:lightskyblue;
+    border-radius: 8px;
+    
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  } 
+
+footer {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: whitesmoke;
+    padding: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 10px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.createclass {
+    margin-top: 30px;
+    width: 25%;
+    height: 30px;
+    background-color: whitesmoke
+
+}
+

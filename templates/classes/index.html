@@ -13,7 +13,7 @@
 
   {% for class in gymclasses %}
   <tr>
-    <td><a href="/classes/{{ class.id }}"> {{class.name}} </a> </td>
+    <td><a href="/classes/{{ class.id }}/bookings"> {{class.name}} </a> </td>
     <td>{{class.date}}</td>
     <td>{{class.time}}</td>
     <td>{{class.details}}</td>
@@ -23,6 +23,6 @@
   </tr>
   </table>
 
-  <a href="/classes/new"><button>Create class</button></a>
+  <a class="createclass" href="/classes/new"><button class="createclass">Create class</button></a>
 
 {% endblock %}

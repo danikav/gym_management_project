@@ -26,7 +26,7 @@ def create_class():
     gymclass_repository.save(new_class)
     return redirect("/classes")
 
-@gymclasses_blueprint.route("/classes/<id>")
+@gymclasses_blueprint.route("/classes/<id>/bookings")
 def show(id):
     gymclass = gymclass_repository.select_class(id)
     found_members = gymclass_repository.members(gymclass)
@@ -53,9 +53,10 @@ def book_member(id):
     gymclass = gymclass_repository.select_class(id)
     return render_template('classes/book.html', gymclass=gymclass)
 
-@gymclasses_blueprint.route("/classes/<id>", methods=["POST"])
+@gymclasses_blueprint.route("/classes/<id>/bookings", methods=["POST"])
 def update_bookings(id):
     member_name = request.form["membername"]
-    booking = Booking(member_name, gymclass.id, id)
+    gymclass = gymclass_repository.select_class(id)
+    booking = Booking(member_name, gymclass, id)
     booking_repository.save(booking)
-    return redirect("/classes")
+    return redirect("/classes/<id>/bookings")

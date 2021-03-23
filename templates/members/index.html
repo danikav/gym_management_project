@@ -9,8 +9,8 @@
 <ul>
   {% for member in members %}
     <li>
-      <a href="/members/{{ member.id }}"> {{member.name}} </a>
       <a href="/members/{{member.id}}/edit"> <button id=edit >edit</button></a>
+      <a href="/members/{{ member.id }}"> {{member.name}} </a>
   </li>
   {% endfor %}
     </ul>
