@@ -51,7 +51,7 @@ def members(gymclass):
     members = []
 
     for row in results:
-        member = Member(row["name"], row["id"])
+        member = Member(row["name"], row['membertype'], row["id"])
         members.append(member)
         
     return members

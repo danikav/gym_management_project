@@ -36,13 +36,13 @@ member_repository.save(member7)
 member8 = Member('Dani Kavanagh', 'premium')
 member_repository.save(member8)
 
-gymclass1 = Gymclass('Zumba', '02/04/21', '19:00', 5, 'Exercise and dance and have fun!', False)
+gymclass1 = Gymclass('Zumba', '02/04/21', '19:00', 5, 'Exercise and dance and have fun!', True)
 gymclass_repository.save(gymclass1)
 
-gymclass2 = Gymclass('Kickboxing', '04/04/21', '21:00', 8, 'Get fit and seek vengeance on your enemies', True)
+gymclass2 = Gymclass('Kickboxing', '04/04/21', '21:00', 8, 'Get fit and seek vengeance on your enemies', False)
 gymclass_repository.save(gymclass2)
 
-gymclass3 = Gymclass('Aikido', '06/04/21', '17:00', 10,  'Learn about the magical powers of stillness and spoons', False)
+gymclass3 = Gymclass('Aikido', '06/04/21', '17:00', 10,  'Learn about the magical powers of stillness and spoons', True)
 gymclass_repository.save(gymclass3)
 
 booking1 = Booking(member1, gymclass1)

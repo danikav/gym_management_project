@@ -56,8 +56,15 @@ def update_class(id):
 @gymclasses_blueprint.route("/classes/<id>/book")
 def book_member(id):
     gymclass = gymclass_repository.select_class(id)
-    members = member_repository.select_all()
-    return render_template('classes/book.html', gymclass=gymclass, members=members)
+    already_booked_members = gymclass_repository.members(gymclass)
+
+    already_booked_member_ids = [member.id for member in already_booked_members]
+
+    if gymclass.peak:
+        members = member_repository.select_premium()
+    else:
+        members = member_repository.select_all()
+    return render_template('classes/book.html', gymclass=gymclass, members=members, already_booked_member_ids=already_booked_member_ids)
 
 @gymclasses_blueprint.route("/classes/<id>/bookings", methods=["POST"])
 def update_bookings(id):
@@ -67,7 +74,8 @@ def update_bookings(id):
     booking = Booking(member, gymclass, id)
 
     members = gymclass_repository.members(gymclass)
-    # if (member.membertype == "standard" and gymclass.peak != True) or (member.membertype == "premium"):
+    # if member in members:
+    #     break
     if len(members) < gymclass.capacity:
         booking_repository.save(booking)
     else:

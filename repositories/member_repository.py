@@ -3,8 +3,8 @@ from models.member import Member
 from models.gymclass import Gymclass
 
 def save(member):
-    sql = "INSERT INTO members( name ) VALUES ( %s ) RETURNING id"
-    values = [member.name]
+    sql = "INSERT INTO members( name, membertype ) VALUES ( %s, %s ) RETURNING id"
+    values = [member.name, member.membertype]
     results = run_sql( sql, values )
     member.id = results[0]['id']
     return member
@@ -55,3 +55,13 @@ def classes(member):
         gymclasses.append(gymclass)
         
     return gymclasses
+
+def select_premium():
+    members = []
+
+    sql = "SELECT * FROM members WHERE membertype = 'premium'"
+    results = run_sql(sql)
+    for row in results:
+        member = Member(row['name'], row['membertype'], row['id'])
+        members.append(member)
+    return members

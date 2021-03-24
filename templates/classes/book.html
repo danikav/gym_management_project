@@ -7,7 +7,7 @@
     <label for="membername">Member name:</label>
     <select id="membername" name="membername">
             {% for member in members %}
-                 <option value={{member.id}}>{{member.name}}</option>
+                 <option {% if member.id in already_booked_member_ids %} disabled {%endif%} value={{member.id}}>{{member.name}}</option>
             {% endfor %}
     </select>
       
