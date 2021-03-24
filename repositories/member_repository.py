@@ -65,3 +65,8 @@ def select_premium():
         member = Member(row['name'], row['membertype'], row['id'])
         members.append(member)
     return members
+
+# def delete(id):
+#     sql = "DELETE FROM members WHERE id = %s"
+#     values = [id]
+#     run_sql(sql, values)
