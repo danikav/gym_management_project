@@ -6,7 +6,12 @@
 <form action="/members" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
-    
+
+        <label for="membertype">Type:</label>
+        <select id="membertype" name="membertype">
+            <option value="membertype_premium">Premium</option>
+            <option value="membertype_standard">Standard</option>
+    </select>
     <div>
         <input type="submit">
     </div>

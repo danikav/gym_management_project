@@ -24,7 +24,8 @@ def create_class():
     time = request.form["time"]
     capacity = request.forn['capacity']
     details = request.form["details"]
-    new_class = Gymclass(name, date, time, capacity, details)
+    peak = request.form["peak"]
+    new_class = Gymclass(name, date, time, capacity, details, peak)
     gymclass_repository.save(new_class)
     return redirect("/classes")
 
@@ -47,7 +48,8 @@ def update_class(id):
     time = request.form["time"]
     capacity = request.form['capacity']
     details = request.form["details"]
-    gymclass = Gymclass(name, date, time, capacity, details, id)
+    peak = request.form["peak"]
+    gymclass = Gymclass(name, date, time, capacity, details, peak, id)
     gymclass_repository.update(gymclass)
     return redirect("/classes")
 
@@ -65,6 +67,7 @@ def update_bookings(id):
     booking = Booking(member, gymclass, id)
 
     members = gymclass_repository.members(gymclass)
+    # if (member.membertype == "standard" and gymclass.peak != True) or (member.membertype == "premium"):
     if len(members) < gymclass.capacity:
         booking_repository.save(booking)
     else:

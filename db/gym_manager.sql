@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS members;
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    membertype VARCHAR(255)
 );
 
 CREATE TABLE classes (
@@ -13,7 +14,8 @@ CREATE TABLE classes (
     date VARCHAR(255),
     time VARCHAR(255),
     capacity INT,
-    details TEXT
+    details TEXT, 
+    peak BOOLEAN
 );
 
 CREATE TABLE bookings (

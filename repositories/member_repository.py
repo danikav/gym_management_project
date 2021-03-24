@@ -19,7 +19,7 @@ def select_all():
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     for row in results:
-        member = Member(row['name'], row['id'])
+        member = Member(row['name'], row['membertype'], row['id'])
         members.append(member)
     return members
 
@@ -30,12 +30,12 @@ def select_member(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        member = Member(result['name'], result['id'] )
+        member = Member(result['name'], result['membertype'], result['id'] )
     return member
 
 def update(member):
     sql = "UPDATE members SET name = %s WHERE id = %s"
-    values = [member.name, member.id]
+    values = [member.name, member.membertype, member.id]
     run_sql(sql, values)
 
 def classes(member):
@@ -51,7 +51,7 @@ def classes(member):
     gymclasses = []
 
     for row in results:
-        gymclass = Gymclass(row["name"], row["date"], row["time"], row["details"], row["id"])
+        gymclass = Gymclass(row["name"], row["date"], row["time"], row["capacity"], row["details"], row["peak"], row["id"])
         gymclasses.append(gymclass)
         
     return gymclasses
