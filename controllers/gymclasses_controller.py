@@ -22,7 +22,7 @@ def create_class():
     name = request.form["name"]
     date = request.form["date"]
     time = request.form["time"]
-    capacity = request.forn['capacity']
+    capacity = request.form['capacity']
     details = request.form["details"]
     peak = request.form["peak"]
     new_class = Gymclass(name, date, time, capacity, details, peak)

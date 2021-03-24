@@ -15,7 +15,7 @@ gymclass_repository.delete_all()
 member1 = Member('Othniel Adalwolf', 'premium')
 member_repository.save(member1)
 
-member2 = Member('Sylvaine Marilyn', 'standard')
+member2 = Member('Sylvaine Marilyn', 'premium')
 member_repository.save(member2)
 
 member3 = Member('Francisca Maia', 'standard')
@@ -35,6 +35,11 @@ member_repository.save(member7)
 
 member8 = Member('Dani Kavanagh', 'premium')
 member_repository.save(member8)
+
+member9 = Member('Eros Kavanagh-Salvage', 'premium')
+member_repository.save(member9)
+
+member10 = Member('Alan Salvage', 'standard')
 
 gymclass1 = Gymclass('Zumba', '02/04/21', '19:00', 5, 'Exercise and dance and have fun!', True)
 gymclass_repository.save(gymclass1)

@@ -19,6 +19,11 @@
     <td>{{class.time}}</td>
     <td>{{class.capacity}}</td>
     <td>{{class.details}}</td>
+    {%if class.peak%}
+    <td >Peak</td>
+    {%else%}
+    <td>Offpeak</td> 
+    {%endif%}
     <td><a href="/classes/{{ class.id }}/edit"> <button id=edit >Edit</button></a></td>
     <td><a href="/classes/{{ class.id }}/book"> <button id=book >Book Member</button></a></td>
     {% endfor %}
