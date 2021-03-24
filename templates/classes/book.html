@@ -6,9 +6,13 @@
 <form action="/classes/{{gymclass.id}}/bookings" method="POST">
     <label for="membername">Member name:</label>
     <select id="membername" name="membername">
-            {% for member in members %}
-                 <option {% if member.id in already_booked_member_ids %} disabled {%endif%} value={{member.id}}>{{member.name}}</option>
-            {% endfor %}
+        {% for member in members %}
+            {% if member.id in already_booked_member_ids %}
+                <option disabled >{{member.name}} - Booked! </option>
+            {% else %}
+                <option value={{member.id}}>{{member.name}}</option>
+            {% endif %}
+        {% endfor %}
     </select>
       
     
