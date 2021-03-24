@@ -36,7 +36,8 @@ def edit_member(id):
 @members_blueprint.route("/members/<id>", methods=["POST"])
 def update_member(id):
     name = request.form["name"]
-    membertype = request.form["membertype"]
+    membertype = str(request.form["membertype"])
+
     member = Member(name, membertype, id)
     member_repository.update(member)
     return redirect("/members")

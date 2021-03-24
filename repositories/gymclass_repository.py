@@ -3,9 +3,11 @@ from models.gymclass import Gymclass
 from models.member import Member
 
 def save(gymclass):
-    sql = "INSERT INTO classes( name, date, time, capacity, details, peak ) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO classes( name, date, time, capacity, details, peak ) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING *"
     values = [gymclass.name, gymclass.date, gymclass.time, gymclass.capacity, gymclass.details, gymclass.peak]
     results = run_sql( sql, values )
+    # import pdb
+    # pdb.set_trace()
     gymclass.id = results[0]['id']
     return gymclass
 
