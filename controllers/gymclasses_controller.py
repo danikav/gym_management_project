@@ -46,7 +46,7 @@ def update_class(id):
     name = request.form["name"]
     date = request.form["date"]
     time = request.form["time"]
-    capacity = request.form['capacity']
+    capacity = request.form["capacity"]
     details = request.form["details"]
     peak = request.form["peak"]
     gymclass = Gymclass(name, date, time, capacity, details, peak, id)
