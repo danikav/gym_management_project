@@ -12,6 +12,12 @@ header {
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
 }
+a {
+    color: black;
+}
+a:visited{
+    color:black;
+}
 
 header > h1 {
     position: relative;
@@ -121,7 +127,7 @@ footer {
 
 #details {
     resize: none; 
-    max-height : 100px;
+    min-height : 100px;
 }
 #image1 {
 grid-area: image1;
@@ -148,4 +154,13 @@ grid-area: image1;
     font-size: 30px;
     
     
+  }
+
+  #quit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    height: 500px;
+    width: 500px;
   }

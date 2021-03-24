@@ -74,8 +74,6 @@ def update_bookings(id):
     booking = Booking(member, gymclass, id)
 
     members = gymclass_repository.members(gymclass)
-    # if member in members:
-    #     break
     if len(members) < gymclass.capacity:
         booking_repository.save(booking)
     else:
