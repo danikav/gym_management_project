@@ -63,7 +63,7 @@ table, th, td {
   }
 
   form {
-      background:snow;
+      background:grey;
       background-size:  ;
   }
 
@@ -121,13 +121,10 @@ footer {
     padding: 70px;
     font-size: 30px;
 }
-/* #angry {
-
-} */
 
 #details {
     resize: none; 
-    min-height : 100px;
+    /* min-height : 100px; */
 }
 #image1 {
 grid-area: image1;
@@ -145,17 +142,18 @@ grid-area: image1;
 .container {
     display: grid;
     grid-template-areas: "image1 image2 image3";
-    
-  }
+    }
   
 .container > div {
     margin: 10px;
     padding: 20px;
     font-size: 30px;
-    
-    
   }
 
+.submit {
+    padding-top: 15px;
+    text-align: center;
+}
   #quit {
     display: block;
     margin-left: auto;

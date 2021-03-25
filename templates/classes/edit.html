@@ -17,8 +17,8 @@
         <input type="number" id="capacity" name="capacity" value="{{gymclass.capacity}}">
     
         <label for="details">Details:</label>
-        <textarea id="details" name="details" rows="5" cols="15" value="{{ gymclass.details }}">
-        </textarea>
+        <input type="text" id="details" name="details" value="{{ gymclass.details }}">
+        
 
     <label for="peak">Type:</label>
         <select id="peak" name="peak">
@@ -26,7 +26,7 @@
             <option value="False">Offpeak</option>
     </select>
     
-    <div>
+    <div class="submit">
         <input type="submit">
     </div>
 </form>
